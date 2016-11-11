@@ -13,7 +13,7 @@ I wanted to have a standalone module with a small display and a few buttons to s
 * The MQTT plugin installed and running on your Jeedom server. (https://www.jeedom.com/market/index.php?v=d&p=market&type=plugin&plugin_id=thermostat&&name=MQTT)
 * An ESP8266 module. It should work with any ESP8266 module if it has a sufficient amount of GPIO. (I'm using a NodeMCU 0.9 ESP8266 ESP-12 board)
 * An 64 x 128 OLED I2C display. It could thericaly work with any display but you will have to adapt the DisplayInit, RefreshDisplay, DisplayOn and DisplayOff to fit your display.
-* 3 buttons andn 3 pull-up resistor (ON/OFF, increase temperature, decrease temperature)
+* 3 buttons andn 3 pull-up resistor (10kΩ) (ON/OFF, increase temperature, decrease temperature)
 
 # Setup
 ## Jeedom setup
@@ -75,6 +75,8 @@ This scenario will be triggered when a new message is published on the "consigne
 ## ESP8266 Setup
 ### Hardware
 
+![Alt Schema Hardware Thermostat](/schema_thermostat.png?raw=true "Creation of the SETPOINT_UPDATE scenario")
+
 ### Software
 Just download the "thermostat_esp8266_mqtt_jeedom.ino" file and open it with your Arduino IDE. I assume you know how to configure your IDE to work with your board.
 
@@ -96,8 +98,8 @@ You can then modify the code to fit your needs. Below are the mandatory variable
 * **uint8_t display_i2c_address** : The I2C adress of your display
 
 # Future evolutions?
-* I'm thinking about solar powering the module. I will first implement a deepsleep mode and then mesure the current to see what battery and what solar panel to choose.
+* I'm thinking about solar powering the module. I will first implement a deepsleep mode and then maesure the current to see what battery and what solar cell choose.
 
-* Writting a plugin to integrate it more "cleanly" inside jeedom will be good.
+* Writting a plugin to integrate it more "cleanly" inside jeedom will be good. (Not having to set scenario....)
 
-* Replace the adafruit logo by a fire on the display when the heating is on...
+* Replace the adafruit logo by a fire on the display when the heating is on.
