@@ -17,9 +17,8 @@ WiFiClient WiFiClient; // Wifi client declaration
 PubSubClient MQTTclient(WiFiClient); // MQTT client declaration
 
 //MQTT Configuration data
-const char* mqtt_server = "192.168.100.29";
+const char* mqtt_server = "IP OF YOUR MQTT SERVER - JEEDOM IP";
 const int mqtt_port = 1883;
-const char* mqtt_main_topic = "thermostat_salon_mqtt";
 const char* mqtt_all_info_topic = "thermostat_salon_mqtt/all_info";
 const char* mqtt_ON_OFF_topic = "thermostat_salon_mqtt/on_off";
 const char* mqtt_update_request_topic = "thermostat_salon_mqtt/update_request";
@@ -37,7 +36,7 @@ int time_before_send_command = 1000; // Time in microsecond before sending the u
 
 // Wifi Configuration Data
 const char* Network_SSID = "YOUR NETWORK SSID"; // SSID for the WiFi Network
-const char* Network_Password = "YOUR WIFI PASSWORD PASSWORD"; // Password for the WiFi Network
+const char* Network_Password = "YOUR WIFI PASSWORD"; // Password for the WiFi Network
 
 // Pin configuration Data
 int ON_OFF_Button = D5; // ON OFF Button
@@ -104,23 +103,11 @@ void setup() {
 
 void sendMQTTUpdateRequest(){
 
-  // TODO : Adding the battery voltage data.
   Serial.println("INFO - Publishing refresh message over MQTT");
 
-  //char* temp_topic_builder_char = "";
-  //strcat(temp_topic_builder_char, mqtt_main_topic);
-  //strcat(temp_topic_builder_char, mqtt_update_request_topic);
-  //Serial.println("1 topic : " + temp_topic_builder_char);
-  
   char* temp_millis_builder_char = "";
   ltoa(millis(), temp_millis_builder_char, 10);
-  //Serial.println("1 millis : " + temp_millis_builder_char);
-  
-  //MQTTclient.publish(temp_topic_builder_char, temp_millis_builder_char);
-  //Serial.println(temp_topic_builder_char);
   MQTTclient.publish(mqtt_update_request_topic, temp_millis_builder_char);
-  //Serial.println("2 topic : " + temp_topic_builder_char);
-  //Serial.println("2 millis : " + temp_millis_builder_char);
 }
 
 void displayOff() {
@@ -283,8 +270,7 @@ void publish_consigne_temp(float temp){
   // Converting the float temperature to char[] in order to send it with mqtt.
   char temp_data_to_be_sent[10];
   dtostrf(temp,2, 1, temp_data_to_be_sent);
-  //sprintf(temp_data_to_be_sent,"%f", temp);
-  
+ 
   Serial.print("INFO : Publishing the new consigne temp : ");
   Serial.println(temp_data_to_be_sent);
     
@@ -354,9 +340,6 @@ void RefreshDisplay(String room_name, float temperature, float temperature_consi
   display.print(temperature,1);
   display.print(" > ");
   display.print(temperature_consigne,1);
-  //display.println("C");
-  //display.println((char)247);
-  //display.println("C");
 
   // Affichage de l'état du thermostat
   //display.setTextColor(BLACK, WHITE); // 'inverted' text
@@ -372,9 +355,6 @@ void RefreshDisplay(String room_name, float temperature, float temperature_consi
   // Affichage de la flamme en cas de chauffe
   if(etat_chauffe){
     display.drawBitmap(112, 48,  logo16_glcd_bmp, 16, 16, 1); // Affiche le logo de chauffe sur l'écran
-    //User_Button_LED_control(HIGH); // Allume la led sur la board
-  } else {
-    //User_Button_LED_control(LOW); // Eteint la led sur la board
   }
 
   // Affichage du buffer.
@@ -410,9 +390,6 @@ void MQTTclientReconnect() {
       Serial.println("INFO - MQTT connected.");
 
       // We subscribe to the all_info topic.
-      //char temp_topic_char[strlen(&mqtt_main_topic[0])+strlen(&mqtt_all_info_topic[0])];
-      //strcat(temp_topic_char, mqtt_main_topic);
-      //strcat(temp_topic_char, mqtt_all_info_topic);
       MQTTclient.subscribe(mqtt_all_info_topic);
       
       sendMQTTUpdateRequest();
