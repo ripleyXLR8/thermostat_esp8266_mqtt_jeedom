@@ -58,8 +58,9 @@ You will have to create 3 differents "triggered" scenarii.
 #### 1) all_info_update scenario
 This scenario will be triggered by any change on the thermostat value. It will then execute the "update_data" MQTT command.
 **Important note** : This scenario must also be triggered when a new message is triggered in the update_request topic.
-
 You will find below the view of my scenario in my Jeedom installation.
+
+![Alt Creation of the ALL_INFO_UPDATE scenario](/mqtt_scenario_3_jeedom.jpeg?raw=true "Creation of the ALL_INFO_UPDATE scenario")
 
 #### 2) on_off_update scenario
 This scenario will be triggered when a new message is published on the "on_off" topic. Then if the message is "true" it reset the current setpoint temperature to its current value. If the message is "false" it set the thermotstat mode to "Off". You will find below the view of my scenario in my Jeedom installation.
@@ -76,3 +77,5 @@ This scenario will be triggered when a new message is published on the "consigne
 * I'm thinking about solar powering the module. I will first implement a deepsleep mode and then mesure the current to see what battery and what solar panel to choose.
 
 * Writting a plugin to integrate it more "cleanly" inside jeedom will be good.
+
+* Replace the adafruit logo by a fire on the display when the heating is on...
