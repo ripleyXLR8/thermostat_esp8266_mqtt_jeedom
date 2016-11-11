@@ -72,6 +72,8 @@ This scenario will be triggered when a new message is published on the "consigne
 
 ![Alt Creation of the SETPOINT_UPDATE scenario](/mqtt_scenario_2_jeedom.jpeg?raw=true "Creation of the SETPOINT_UPDATE scenario")
 
+## ESP8266 Setup
+
 
 # Future evolutions?
 * I'm thinking about solar powering the module. I will first implement a deepsleep mode and then mesure the current to see what battery and what solar panel to choose.
