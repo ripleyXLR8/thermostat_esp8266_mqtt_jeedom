@@ -98,6 +98,8 @@ You can then modify the code to fit your needs. Below are the mandatory variable
 * **uint8_t display_i2c_address** : The I2C adress of your display
 
 # Future evolutions?
+* Making an enclosure to integrate it in my living room. I still don't wall if it will be wall mounted inside a wall power socket with a power supply or place in a case with a rechargable battery.
+
 * I'm thinking about solar powering the module. I will first implement a deepsleep mode and then maesure the current to see what battery and what solar cell choose.
 
 * Writting a plugin to integrate it more "cleanly" inside jeedom will be good. (Not having to set scenario....)
