@@ -73,7 +73,27 @@ This scenario will be triggered when a new message is published on the "consigne
 ![Alt Creation of the SETPOINT_UPDATE scenario](/mqtt_scenario_2_jeedom.jpeg?raw=true "Creation of the SETPOINT_UPDATE scenario")
 
 ## ESP8266 Setup
+### Hardware
 
+### Software
+Just download the "thermostat_esp8266_mqtt_jeedom.ino" file and open it with your Arduino IDE. I assume you know how to configure your IDE to work with your board.
+
+You can then modify the code to fit your needs. Below are the mandatory variable you have to edit.
+
+* **const char* mqtt_server** : Here is the IP of your MQTT server which is very likely to be the IP of your Jeedom server.
+* **const int mqtt_port** : The port of your MQTT server... very likely to be 1883.
+* **const char* mqtt_all_info_topic** : This must be the name of your all_info topic in the Jeedom MQTT plugin.
+* **const char* mqtt_ON_OFF_topic** : This must be the name of your ON_OFF topic in the Jeedom MQTT plugin.
+* **const char* mqtt_update_request_topic** : This must be the name of your update_request topic in the Jeedom MQTT plugin.
+* **const char* mqtt_consigne_temp_topic** : This must be the name of your setpoint temperature topic in the Jeedom MQTT plugin.
+* **const char* Network_SSID** : Your WiFi network SSID
+* **const char* Network_Password** : Your WiFi network password
+* **int ON_OFF_Button** : The pin where the ON OFF button is connected
+* **int increaseTempButton** : The pin where the increase button is connected
+* **int decreaseTempButton** : The pin where the decrease button is connected
+* **int sda_i2c_pin** : The sda pin of your display
+* **int scl_i2c_pin** : The scl pin of your display
+* **uint8_t display_i2c_address** : The I2C adress of your display
 
 # Future evolutions?
 * I'm thinking about solar powering the module. I will first implement a deepsleep mode and then mesure the current to see what battery and what solar panel to choose.
