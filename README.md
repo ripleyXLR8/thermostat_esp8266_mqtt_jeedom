@@ -109,3 +109,7 @@ Just compile it and upload it to your ESP8266 and it should work...
 * Writting a plugin to integrate it more "cleanly" inside jeedom will be good. (Not having to set scenario....)
 
 * Replace the adafruit logo by a fire on the display when the heating is on.
+
+# License
+This project is published under the GNU GENERAL PUBLIC LICENSE. Feel free to use it, modify it, distribute it, etc... See Licence.md for more details.
+If this project helps you, don't hesitate to send me a message ;-) and remember, software is like sex, it's better when it's free.
