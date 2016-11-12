@@ -1,8 +1,8 @@
 # What is it?
 
-I'm using an open-source software called jeedom (https://www.jeedom.com) to make some automatisation in my house. I have temperature probes in different room and electrical relay on heaters (mainly z-waves modules), so i can use the Jeedom Web-UI or the Jeedom smartphone app to change the setpoint switch heaters ON and OFF or change the setpoint temperature. This is great but some times, you don't want to use your computer or your smartphone is off and you still want to change the temperature...
+I'm using an open-source software called jeedom (https://www.jeedom.com) to make some automatisation in my house. I have temperature probes in different room and electrical relay on heaters (mainly z-waves modules), so i can use the Jeedom Web-UI or the Jeedom smartphone app to switch heaters ON and OFF or change the setpoint temperature. This is great, but sometimes, you don't want to use your computer or your smartphone is off and you still want to change the temperature...
 
-That's why, I wanted to have a standalone module with a small display and a few buttons to start and stop the thermostat, and increase/decrease the setpoint temperature.
+That's why I wanted to create a standalone module with a small display and a few buttons to start and stop the thermostat, and increase/decrease the setpoint temperature.
 
 ![Alt Module](/15053415_10154125135750765_761397922_o.jpg?raw=true "Creation of the SETPOINT_UPDATE scenario")
 
