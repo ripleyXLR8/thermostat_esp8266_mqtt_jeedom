@@ -1,6 +1,10 @@
 # What is it?
 I wanted to have a standalone module with a small display and a few buttons to start and stop the thermostat, and increase/decrease the setpoint temperature. The thermostat is managed by Jeedom an open-source domotic platform. (https://www.jeedom.com).
 
+![Alt Module](/15053415_10154125135750765_761397922_o.jpg?raw=true "Creation of the SETPOINT_UPDATE scenario")
+
+
+
 # Thanks to ...
 * Benoit Blanchon for his JSON library : https://github.com/bblanchon/ArduinoJson
 * Ivan Grokhtkov <ivan@esp8266.com> for his ESP8266 Wifi library : https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi
