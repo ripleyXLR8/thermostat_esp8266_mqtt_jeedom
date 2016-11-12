@@ -3,8 +3,6 @@ I wanted to have a standalone module with a small display and a few buttons to s
 
 ![Alt Module](/15053415_10154125135750765_761397922_o.jpg?raw=true "Creation of the SETPOINT_UPDATE scenario")
 
-
-
 # Thanks to ...
 * Benoit Blanchon for his JSON library : https://github.com/bblanchon/ArduinoJson
 * Ivan Grokhtkov <ivan@esp8266.com> for his ESP8266 Wifi library : https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi
@@ -100,6 +98,8 @@ You can then modify the code to fit your needs. Below are the mandatory variable
 * **int sda_i2c_pin** : The sda pin of your display
 * **int scl_i2c_pin** : The scl pin of your display
 * **uint8_t display_i2c_address** : The I2C adress of your display
+
+Just compile it and upload it to your ESP8266 and it should work...
 
 # Future evolutions?
 * Making an enclosure to integrate it in my living room. I still don't wall if it will be wall mounted inside a wall power socket with a power supply or place in a case with a rechargable battery.
